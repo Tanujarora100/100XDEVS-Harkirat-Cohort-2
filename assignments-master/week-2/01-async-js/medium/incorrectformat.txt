@@ -1,0 +1,4 @@
+THIS IS A   TEST TO  CHECK        CORRECTNESS FOR              CODE.
+    This line starts with extra indentation.
+Another line with             irregular spaces.
+       One more line with trailing spaces

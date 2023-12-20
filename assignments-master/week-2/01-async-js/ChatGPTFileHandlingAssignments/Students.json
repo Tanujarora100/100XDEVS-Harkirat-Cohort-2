@@ -1,0 +1,51 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "grade": "A",
+      "subjects": [
+        "Math",
+        "English",
+        "Science"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "grade": "B",
+      "subjects": [
+        "History",
+        "Geography",
+        "Art"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Bob Johnson",
+      "grade": "C",
+      "subjects": [
+        "Physics",
+        "Chemistry",
+        "Biology"
+      ]
+    }
+  ],
+  "teachers": [
+    {
+      "id": 101,
+      "name": "Mr. Anderson",
+      "subject": "Math"
+    },
+    {
+      "id": 102,
+      "name": "Ms. Williams",
+      "subject": "English"
+    },
+    {
+      "id": 103,
+      "name": "Dr. Brown",
+      "subject": "Science"
+    }
+  ]
+}
