@@ -1,18 +1,29 @@
-/*
-  Implement a function `isPalindrome` which takes a string as argument and returns true/false as its result.
-  Note: the input string is case-insensitive which means 'Nan' is a palindrom as 'N' and 'n' are considered case-insensitive.
-*/
+function isSpecialCharacter(char) {
+    return !/^[a-zA-Z0-9]$/.test(char);
+}
 
 function isPalindrome(str) {
+    str = str.trim().toLowerCase();
     let start = 0;
     let end = str.length - 1;
+
     while (start < end) {
+        while (isSpecialCharacter(str[start]) && start < end) {
+            start++;
+        }
+        while (isSpecialCharacter(str[end]) && end > start) {
+            end--;
+        }
+
         if (str[start] !== str[end])
             return false;
+        else {
+            start++;
+            end--;
+        }
     }
+
     return true;
 }
 
 module.exports = isPalindrome;
-
-

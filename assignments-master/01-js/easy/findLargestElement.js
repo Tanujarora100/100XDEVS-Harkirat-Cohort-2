@@ -6,6 +6,8 @@
 */
 
 function findLargestElement(numbers) {
+    if(numbers.length===0)
+        return
     let ans = Number.MIN_SAFE_INTEGER;
     for (let i = 0; i < numbers.length; i++) {
         ans = Math.max(ans, numbers[i])

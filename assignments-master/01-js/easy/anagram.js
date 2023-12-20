@@ -5,23 +5,28 @@
 */
 
 function isAnagram(str1, str2) {
-    const arr = new Array(26).fill(0);
-    const arr2 = new Array(26).fill(0);
-    for (let i = 0; i < str1.length; i++) {
-        const charCode = str1.charCodeAt(i) - 'a'.charCodeAt(0);
-        arr[charCode]++;
-    }
+    if (str1.length !== str2.length)
+        return false;
 
-    for (let i = 0; i < str2.length; i++) {
-        const charCode = str2.charCodeAt(i) - 'a'.charCodeAt(0);
-        arr2[charCode]++;
+    let hashMap = new Map();
+    for (let i = 0; i < str1.length; i++) {
+        hashMap.set(str1[i].toLowerCase(), (hashMap.get(str1[i].toLowerCase()) || 0) + 1);
     }
-    return JSON.stringify(arr) === JSON.stringify(arr2)
+    for (let i = 0; i < str2.length; i++) {
+        let char = str2[i].toLowerCase();
+        if (!hashMap.has(char) || hashMap.get(char) === 0) {
+            return false;
+        }
+        // Decrement the frequency in the map
+        hashMap.set(char, hashMap.get(char) - 1);
+    }
+    return true;
+
 }
 
 
 module.exports = isAnagram;
-const ans= isAnagram("hi", `ih`)
+const ans = isAnagram("hi", `ih`)
 console.log(ans)
 
 
